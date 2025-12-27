@@ -1,0 +1,185 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=93304, tid=0x00000000000160ac
+#
+# JRE version:  (8.0_361) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.361-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002923b596000):  JavaThread "Unknown thread" [_thread_in_vm, id=90284, stack(0x000000fcf5800000,0x000000fcf5900000)]
+
+Stack: [0x000000fcf5800000,0x000000fcf5900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3317a9]
+V  [jvm.dll+0x277c4e]
+V  [jvm.dll+0x27888d]
+V  [jvm.dll+0x26f0d5]
+V  [jvm.dll+0x509d]
+V  [jvm.dll+0x3cca9c]
+V  [jvm.dll+0x3c8e07]
+V  [jvm.dll+0xfd0df]
+V  [jvm.dll+0x20c29b]
+V  [jvm.dll+0x23adc7]
+V  [jvm.dll+0x1637b6]
+C  [javaw.exe+0x2322]
+C  [javaw.exe+0x16544]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c53c]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000002923b596000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=90284, stack(0x000000fcf5800000,0x000000fcf5900000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000648800000, size: 6008 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 112128K, used 1925K [0x0000000742d80000, 0x000000074aa80000, 0x00000007c0000000)
+  eden space 96256K, 2% used [0x0000000742d80000,0x0000000742f61488,0x0000000748b80000)
+  from space 15872K, 0% used [0x0000000749b00000,0x0000000749b00000,0x000000074aa80000)
+  to   space 15872K, 0% used [0x0000000748b80000,0x0000000748b80000,0x0000000749b00000)
+ ParOldGen       total 257024K, used 0K [0x0000000648800000, 0x0000000658300000, 0x0000000742d80000)
+  object space 257024K, 0% used [0x0000000648800000,0x0000000648800000,0x0000000658300000)
+ Metaspace       used 786K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x000002924c650000,0x000002924d210000] byte_map_base: 0x000002924940c000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006e1cb090
+ Begin Bits: [0x000002924d9f0000, 0x00000292537d0000)
+ End Bits:   [0x00000292537d0000, 0x00000292595b0000)
+
+Polling page: 0x000002923b920000
+
+CodeCache: size=245760Kb used=329Kb max_used=329Kb free=245430Kb
+ bounds [0x000002923d290000, 0x000002923d500000, 0x000002924c290000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.021 loading class java/lang/Short
+Event: 0.021 loading class java/lang/Short done
+Event: 0.021 loading class java/lang/Integer
+Event: 0.021 loading class java/lang/Integer done
+Event: 0.021 loading class java/lang/Long
+Event: 0.021 loading class java/lang/Long done
+Event: 0.021 loading class java/lang/NullPointerException
+Event: 0.021 loading class java/lang/NullPointerException done
+Event: 0.021 loading class java/lang/ArithmeticException
+Event: 0.021 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff698d40000 - 0x00007ff698d87000 	D:\java\jdk-8u361\jre\bin\javaw.exe
+0x00007ffeadea0000 - 0x00007ffeae107000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffeacc50000 - 0x00007ffeacd19000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffeab2b0000 - 0x00007ffeab69f000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffea4840000 - 0x00007ffea48df000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffead7a0000 - 0x00007ffead854000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffeac710000 - 0x00007ffeac7b9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffeac660000 - 0x00007ffeac706000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffeac840000 - 0x00007ffeac958000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffeac2b0000 - 0x00007ffeac475000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffeabc10000 - 0x00007ffeabc37000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffeacf90000 - 0x00007ffeacfbb000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffeab820000 - 0x00007ffeab94c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffeab9e0000 - 0x00007ffeaba83000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffeaaff0000 - 0x00007ffeab13b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe89d90000 - 0x00007ffe8a023000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7309_none_3e05feeae336a044\COMCTL32.dll
+0x00007ffeac000000 - 0x00007ffeac031000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffea08a0000 - 0x00007ffea08b5000 	D:\java\jdk-8u361\jre\bin\vcruntime140.dll
+0x00007ffe5b990000 - 0x00007ffe5ba2b000 	D:\java\jdk-8u361\jre\bin\msvcp140.dll
+0x000000006d9e0000 - 0x000000006e243000 	D:\java\jdk-8u361\jre\bin\server\jvm.dll
+0x00007ffeacc30000 - 0x00007ffeacc38000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffe83910000 - 0x00007ffe8391a000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffea1c10000 - 0x00007ffea1c1b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe9fcd0000 - 0x00007ffe9fd05000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffeac7c0000 - 0x00007ffeac834000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffea9ec0000 - 0x00007ffea9edb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffea37c0000 - 0x00007ffea37d0000 	D:\java\jdk-8u361\jre\bin\verify.dll
+0x00007ffe8b1f0000 - 0x00007ffe8b21b000 	D:\java\jdk-8u361\jre\bin\java.dll
+0x00007ffe6b3e0000 - 0x00007ffe6b416000 	D:\java\jdk-8u361\jre\bin\jdwp.dll
+0x00007ffe97980000 - 0x00007ffe97989000 	D:\java\jdk-8u361\jre\bin\npt.dll
+0x00007ffe85120000 - 0x00007ffe85150000 	D:\java\jdk-8u361\jre\bin\instrument.dll
+0x00007ffe8b740000 - 0x00007ffe8b758000 	D:\java\jdk-8u361\jre\bin\zip.dll
+0x00007ffea85a0000 - 0x00007ffea87e2000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007ffeabc70000 - 0x00007ffeabff5000 	C:\WINDOWS\System32\combase.dll
+0x00007ffeaceb0000 - 0x00007ffeacf86000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffeab140000 - 0x00007ffeab1e5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:59634 -ea -javaagent:D:\STS\sts-4.32.2.RELEASE\configuration\org.eclipse.osgi\272\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 59633 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test com.zxy.consumer.rpc_consumer.RemoteInvokeTest:testSaveUser
+java_class_path (initial): D:\STS\sts_projetct\rpc-consumer\target\test-classes;D:\STS\sts_projetct\rpc-consumer\target\classes;C:\Users\Zhang Xinyu\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Zhang Xinyu\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;D:\STS\sts_projetct\rpc\target\classes;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-all\4.1.6.Final\netty-all-4.1.6.Final.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-context\4.3.9.RELEASE\spring-context-4.3.9.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-aop\4.3.9.RELEASE\spring-aop-4.3.9.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-beans\4.3.9.RELEASE\spring-beans-4.3.9.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-core\4.3.9.RELEASE\spring-core-4.3.9.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-expression\4.3.9.RELEASE\spring-expression-4.3.9.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\org\springframework\spring-test\4.3.7.RELEASE\spring-test-4.3.7.RELEASE.jar;C:\Users\Zhang Xinyu\.m2\repository\org\apache\zookeeper\zookeeper\3.7.2\zookeeper-3.7.2.jar;C:\Users\Zhang Xinyu\.m2\repository\org\apache\zookeeper\zookeeper-jute\3.7.2\zookeeper-jute-3.7.2.jar;C:\Users\Zhang Xinyu\.m2\repository\org\apache\yetus\audience-annotations\0.12.0\audience-annotations-0.12.0.jar;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-handler\4.1.94.Final\netty-handler-4.1.94.Final.jar;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-common\4.1.94.Final\netty-common-4.1.94.Final.jar;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-resolver\4.1.94.Final\netty-resolver-4.1.94.Final.jar;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-buffer\4.1.94.Final\netty-buffer-4.1.94.Final.jar;C:\Users\Zhang Xinyu\.m2\repository\io\netty\netty-transport\4.1.94.Final\ne
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\java\jdk-8u361\jre
+CLASSPATH=.;D:\java\jdk-8u361\jre\lib;D:\java\jdk-8u361\jre\lib\tools.jar
+PATH=D:/STS/sts-4.32.2.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin/server;D:/STS/sts-4.32.2.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.9.v20251105-0741/jre/bin;D:\NVIDlA GPU ComputingToolkit\CUDA\v11.8\bin;D:\NVIDlA GPU ComputingToolkit\CUDA\v11.8\libnvvp;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\java\jdk-8u361\jre\bin;D:\java\jdk-8u361\jre\jre\bin;D:\MySQL\MySQL Server 5.7\bin;D:\python_3.10\Scripts\;D:\python_3.10\;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\anaconda;D:\anaconda\Scripts;D:\anaconda\Library\bin;D:\anaconda\Library\mingw-w64\bin;D:\Git\cmd;C:\Users\Zhang Xinyu\AppData\Local\Programs\Ollama;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;D:\python_3.10\Scripts\;D:\python_3.10\;C:\Users\Zhang Xinyu\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\Zhang Xinyu\AppData\Local\Programs\Ollama;;D:\IntelliJ IDEA 2025.1.3\bin;;D:\STS\sts-4.32.2.RELEASE;
+USERNAME=Zhang Xinyu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 170 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 26100 (10.0.26100.7309)
+
+CPU:total 18 (initial active 18) (9 cores per cpu, 2 threads per core) family 6 model 170 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 24606072k(10298132k free), swap 58160504k(7332k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.361-b09) for windows-amd64 JRE (1.8.0_361-b09), built on Jan  9 2023 08:38:53 by "java_re" with MS VC++ 15.9 (VS2017)
+
+time: Fri Dec 26 17:35:16 2025
+timezone: Intel64 Family 6 Model 170 Stepping 4, GenuineIntel
+elapsed time: 0.200148 seconds (0d 0h 0m 0s)
+
